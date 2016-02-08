@@ -1,5 +1,6 @@
 package pl.czak.virginbalance;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -12,11 +13,14 @@ public class AccountDetails {
     private Balance dataBalance;
 
     public AccountDetails() {
-        // TODO: Parse balances from the JSON
-        generalBalance = new Balance(7.8, "PLN", false);
-        voiceBalance = new Balance(5966, "SECONDS", false);
-        smsBalance = new Balance(49999, "UNIT", true);
-        dataBalance = new Balance(1867000, "KB", false);
+    }
+
+    public AccountDetails(JSONObject json) throws JSONException {
+        JSONObject balances = json.getJSONObject("customerBalancesDto");
+        generalBalance = new Balance(balances.getJSONObject("generalBalance"));
+        voiceBalance = new Balance(balances.getJSONObject("complexBundleVoiceBalance"));
+        smsBalance = new Balance(balances.getJSONObject("smsBalance"));
+        dataBalance = new Balance(balances.getJSONObject("dataBalance"));
     }
 
     public Balance getGeneralBalance() {

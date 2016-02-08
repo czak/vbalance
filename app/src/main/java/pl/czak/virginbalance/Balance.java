@@ -1,5 +1,7 @@
 package pl.czak.virginbalance;
 
+import org.json.JSONObject;
+
 /**
  * Created by czak on 08/02/16.
  */
@@ -8,10 +10,10 @@ public class Balance {
     private String unit;
     private boolean unlimited;
 
-    public Balance(double quantity, String unit, boolean unlimited) {
-        this.quantity = quantity;
-        this.unit = unit;
-        this.unlimited = unlimited;
+    public Balance(JSONObject json) {
+        this.quantity = json.optDouble("quantity");
+        this.unit = json.optString("unit");
+        this.unlimited = json.optBoolean("unlimited");
     }
 
     public double getQuantity() {
