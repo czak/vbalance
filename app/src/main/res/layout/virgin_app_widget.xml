@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -21,10 +22,10 @@
             />
 
         <TextView
-            android:id="@+id/balance_text_view"
+            android:id="@+id/balance_amount_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="XXX PLN"
+            android:text="--- PLN"
             android:textColor="@android:color/holo_red_dark"
             />
     </LinearLayout>
@@ -38,6 +39,36 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Minuty do wszystkich:"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/package_minutes_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textColor="@android:color/holo_red_dark"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMS"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/package_sms_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textColor="@android:color/holo_red_dark"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Data:"
             android:textColor="@android:color/black"
             />
@@ -46,7 +77,7 @@
             android:id="@+id/package_data_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="YYY MB"
+            android:text="--- MB"
             android:textColor="@android:color/holo_red_dark"
             />
     </LinearLayout>
