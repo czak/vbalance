@@ -3,8 +3,12 @@ package pl.czak.virginbalance;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.RemoteViews;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Implementation of App Widget functionality.
@@ -12,13 +16,15 @@ import android.widget.RemoteViews;
 public class VirginAppWidget extends AppWidgetProvider {
     private static final String TAG = "VirginAppWidget";
 
-    static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                int appWidgetId) {
+    static void updateAppWidget(Context context, final AppWidgetManager appWidgetManager,
+                                final int appWidgetId) {
 
         // Construct the RemoteViews object
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.virgin_app_widget);
-        views.setTextViewText(R.id.balance_amount_text_view, "7,81 PLN");
-        views.setTextViewText(R.id.package_data_text_view, "1867 MB");
+        final RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.virgin_app_widget);
+        views.setTextViewText(R.id.balance_amount_text_view, "12,30 PLN");
+        views.setTextViewText(R.id.package_minutes_text_view, "123");
+        views.setTextViewText(R.id.package_sms_text_view, "Bez limitu");
+        views.setTextViewText(R.id.package_data_text_view, "1500 MB");
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
