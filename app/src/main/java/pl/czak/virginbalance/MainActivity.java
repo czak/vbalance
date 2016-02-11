@@ -3,14 +3,9 @@ package pl.czak.virginbalance;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 
 public class MainActivity extends AppCompatActivity {
     private TextView balanceAmountTextView;
