@@ -4,81 +4,252 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@android:color/white"
-    android:padding="@dimen/widget_margin">
-
+    android:background="#f5f5f5">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:layout_margin="2dp"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Środki na koncie:"
+            android:text="Środki na koncie"
+            android:textSize="12sp"
             android:textColor="@android:color/black"
-            />
+            android:gravity="center_horizontal"
+            android:fontFamily="sans-serif-condensed" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/piggy_image"
+                android:src="@drawable/piggy"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7,80 zł"
+                android:textColor="@color/virginRed"
+                android:textSize="20sp"
+                android:layout_below="@+id/piggy_image"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"/>
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/balance_amount_text_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="--- PLN"
-            android:textColor="@android:color/holo_red_dark"
-            />
+            android:text="Taryfa #ChcęWszystko"
+            android:textSize="12sp"
+            android:textColor="@color/subtext"
+            android:gravity="center_horizontal"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ważne do 2017-01-30"
+            android:textColor="@color/subtext"
+            android:textSize="12sp"
+            android:gravity="center_horizontal"
+            android:fontFamily="sans-serif-condensed"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_margin="2dp"
+        android:background="@android:color/white"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Minuty do wszystkich:"
+            android:text="Pakiet #pełenluz"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-condensed"
             android:textColor="@android:color/black"
-            />
+            android:gravity="center_horizontal"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/minutes"
+                        android:id="@+id/imageView"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minuty do wszystkich"
+                        android:id="@+id/textView"
+                        android:layout_toRightOf="@+id/imageView"
+                        android:layout_toEndOf="@+id/imageView"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/black"
+                        android:layout_alignParentTop="true"
+                        android:fontFamily="sans-serif-condensed"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="-2dp"
+                        android:lineSpacingMultiplier="0.75"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="99"
+                        android:id="@+id/textView2"
+                        android:layout_below="@+id/textView"
+                        android:layout_toRightOf="@+id/imageView"
+                        android:layout_toEndOf="@+id/imageView"
+                        android:textSize="20sp"
+                        android:textColor="@color/virginRed"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-condensed"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="-4dp"
+                        android:lineSpacingMultiplier="0.75"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView3"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/sms"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SMS"
+                        android:id="@+id/textView3"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/imageView3"
+                        android:layout_toEndOf="@+id/imageView3"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="-2dp"
+                        android:lineSpacingMultiplier="0.75"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bez limitu"
+                        android:id="@+id/textView4"
+                        android:textSize="20sp"
+                        android:textColor="@color/virginRed"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/textView3"
+                        android:layout_toRightOf="@+id/imageView3"
+                        android:layout_toEndOf="@+id/imageView3"
+                        android:fontFamily="sans-serif-condensed"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="-4dp"
+                        android:lineSpacingMultiplier="0.75"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView4"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/data"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Data"
+                        android:id="@+id/textView5"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/imageView4"
+                        android:layout_toEndOf="@+id/imageView4"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="-2dp"
+                        android:lineSpacingMultiplier="0.75"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1451 MB"
+                        android:id="@+id/textView6"
+                        android:textSize="20sp"
+                        android:textColor="@color/virginRed"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/textView5"
+                        android:layout_toRightOf="@+id/imageView4"
+                        android:layout_toEndOf="@+id/imageView4"
+                        android:fontFamily="sans-serif-condensed"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="-4dp"
+                        android:lineSpacingMultiplier="0.75"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </FrameLayout>
 
         <TextView
-            android:id="@+id/package_minutes_text_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="---"
-            android:textColor="@android:color/holo_red_dark"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SMS:"
-            android:textColor="@android:color/black"
-            />
-
-        <TextView
-            android:id="@+id/package_sms_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="---"
-            android:textColor="@android:color/holo_red_dark"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data:"
-            android:textColor="@android:color/black"
-            />
-
-        <TextView
-            android:id="@+id/package_data_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="--- MB"
-            android:textColor="@android:color/holo_red_dark"
-            />
+            android:text="Ważny do 2016-03-01"
+            android:textSize="12sp"
+            android:textColor="@color/subtext"
+            android:gravity="center_horizontal"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/textView7"/>
     </LinearLayout>
+
 </LinearLayout>

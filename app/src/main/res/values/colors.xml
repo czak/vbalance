@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#dd0000</color>
     <color name="colorAccent">#dd0000</color>
     <color name="windowBackground">#FFFFFF</color>
+
+    <color name="virginRed">#dc0000</color>
+    <color name="header">#000000</color>
+    <color name="subtext">#606060</color>
 </resources>

@@ -18,10 +18,10 @@ public class VirginAppWidget extends AppWidgetProvider {
 
         // Construct the RemoteViews object
         final RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.virgin_app_widget);
-        views.setTextViewText(R.id.balance_amount_text_view, "12,30 PLN");
-        views.setTextViewText(R.id.package_minutes_text_view, "123");
-        views.setTextViewText(R.id.package_sms_text_view, "Bez limitu");
-        views.setTextViewText(R.id.package_data_text_view, "1500 MB");
+//        views.setTextViewText(R.id.balance_amount_text_view, "12,30 PLN");
+//        views.setTextViewText(R.id.package_minutes_text_view, "123");
+//        views.setTextViewText(R.id.package_sms_text_view, "Bez limitu");
+//        views.setTextViewText(R.id.package_data_text_view, "1500 MB");
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);

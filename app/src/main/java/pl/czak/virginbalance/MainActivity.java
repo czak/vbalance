@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.virgin_app_widget);
 
-        balanceAmountTextView = (TextView) findViewById(R.id.balance_amount_text_view);
-        packageMinutesTextView = (TextView) findViewById(R.id.package_minutes_text_view);
-        packageSmsTextView = (TextView) findViewById(R.id.package_sms_text_view);
-        packageDataTextView = (TextView) findViewById(R.id.package_data_text_view);
+//        balanceAmountTextView = (TextView) findViewById(R.id.balance_amount_text_view);
+//        packageMinutesTextView = (TextView) findViewById(R.id.package_minutes_text_view);
+//        packageSmsTextView = (TextView) findViewById(R.id.package_sms_text_view);
+//        packageDataTextView = (TextView) findViewById(R.id.package_data_text_view);
 
         final PropertyManager props = new PropertyManager(this);
 
@@ -52,22 +52,22 @@ public class MainActivity extends AppCompatActivity {
                 // General balance
                 Balance balance = details.getGeneralBalance();
                 String text = String.format("%.2f %s", balance.getQuantity(), balance.getUnit());
-                balanceAmountTextView.setText(text);
+                //balanceAmountTextView.setText(text);
 
                 // Minutes in package (stores in seconds)
                 balance = details.getVoiceBalance();
                 text = String.format("%.0f", balance.getQuantity() / 60);
-                packageMinutesTextView.setText(text);
+                //packageMinutesTextView.setText(text);
 
                 // SMS in package
                 balance = details.getSmsBalance();
                 text = balance.isUnlimited() ? "Bez limitu" : String.format("%.0f", balance.getQuantity());
-                packageSmsTextView.setText(text);
+                //packageSmsTextView.setText(text);
 
                 // Data in package (stored in KB, divide by 1000)
                 balance = details.getDataBalance();
                 text = String.format("%.0f MB", balance.getQuantity() / 1000);
-                packageDataTextView.setText(text);
+                //packageDataTextView.setText(text);
             }
         }.execute();
     }
