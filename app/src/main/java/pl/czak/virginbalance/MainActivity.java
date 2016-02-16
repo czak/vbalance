@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.virgin_app_widget);
+        setContentView(R.layout.widget_bundle);
 
 //        balanceAmountTextView = (TextView) findViewById(R.id.balance_amount_text_view);
 //        packageMinutesTextView = (TextView) findViewById(R.id.package_minutes_text_view);

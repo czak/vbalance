@@ -17,8 +17,8 @@ public class VirginAppWidget extends AppWidgetProvider {
         Log.d(TAG, "updateAppWidget() called with: " + "context = [" + context + "], appWidgetManager = [" + appWidgetManager + "], appWidgetId = [" + appWidgetId + "]");
 
         // Construct the RemoteViews object
-        final RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.virgin_app_widget);
-//        views.setTextViewText(R.id.balance_amount_text_view, "12,30 PLN");
+        final RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_nobundle);
+        views.setTextViewText(R.id.balance_amount_text_view, "12,30 zł");
 //        views.setTextViewText(R.id.package_minutes_text_view, "123");
 //        views.setTextViewText(R.id.package_sms_text_view, "Bez limitu");
 //        views.setTextViewText(R.id.package_data_text_view, "1500 MB");

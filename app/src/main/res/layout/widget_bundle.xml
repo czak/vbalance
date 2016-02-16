@@ -46,7 +46,8 @@
                 android:layout_below="@+id/piggy_image"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif-condensed"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:id="@+id/balance_amount_text_view"/>
         </RelativeLayout>
 
         <TextView
