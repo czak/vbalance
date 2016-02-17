@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Virgin Balance</string>
+    <string name="account_tariff">Taryfa %s</string>
+    <string name="account_validity">Ważne do %tF</string>
+    <string name="package_name">Pakiet %s</string>
+    <string name="unlimited">Bez limitu</string>
+    <string name="package_validity">Ważny do %tF</string>
+    <string name="invalid">Nieważny</string>
 </resources>

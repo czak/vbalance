@@ -6,16 +6,16 @@ import org.json.JSONObject;
 /**
  * Created by czak on 08/02/16.
  */
-public class AccountDetails {
+public class Account {
     private Balance generalBalance;
     private Balance voiceBalance;
     private Balance smsBalance;
     private Balance dataBalance;
 
-    public AccountDetails() {
+    public Account() {
     }
 
-    public AccountDetails(JSONObject json) throws JSONException {
+    public Account(JSONObject json) throws JSONException {
         JSONObject balances = json.getJSONObject("customerBalancesDto");
         generalBalance = new Balance(balances.getJSONObject("generalBalance"));
         voiceBalance = new Balance(balances.getJSONObject("complexBundleVoiceBalance"));

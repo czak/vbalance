@@ -13,13 +13,13 @@ import android.widget.ListView;
 /**
  * Created by czak on 09/02/16.
  */
-public class VirginAppWidgetConfigure extends AppCompatActivity {
+public class ConfigureActivity extends AppCompatActivity {
     private int mAppWidgetId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.appwidget_configure);
+        setContentView(R.layout.activity_configure);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -37,8 +37,8 @@ public class VirginAppWidgetConfigure extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // TODO: Preserve credentials so they can be accessed by widget's update handler
                 AppWidgetManager appWidgetManager =
-                        AppWidgetManager.getInstance(VirginAppWidgetConfigure.this);
-                VirginAppWidget.updateAppWidget(VirginAppWidgetConfigure.this, appWidgetManager, mAppWidgetId);
+                        AppWidgetManager.getInstance(ConfigureActivity.this);
+                VirginAppWidget.updateAppWidget(ConfigureActivity.this, appWidgetManager, mAppWidgetId);
 
                 Intent resultValue = new Intent();
                 resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);

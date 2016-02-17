@@ -57,7 +57,8 @@
             android:textSize="12sp"
             android:textColor="@color/subtext"
             android:gravity="center_horizontal"
-            android:fontFamily="sans-serif-condensed"/>
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/account_tariff_text_view"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -66,7 +67,8 @@
             android:textColor="@color/subtext"
             android:textSize="12sp"
             android:gravity="center_horizontal"
-            android:fontFamily="sans-serif-condensed"/>
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/account_validity_text_view"/>
     </LinearLayout>
 
     <LinearLayout
@@ -85,7 +87,8 @@
             android:textSize="12sp"
             android:fontFamily="sans-serif-condensed"
             android:textColor="@android:color/black"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:id="@+id/package_name_text_view"/>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -132,7 +135,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="99"
-                        android:id="@+id/textView2"
+                        android:id="@+id/package_minutes_text_view"
                         android:layout_below="@+id/textView"
                         android:layout_toRightOf="@+id/imageView"
                         android:layout_toEndOf="@+id/imageView"
@@ -180,7 +183,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bez limitu"
-                        android:id="@+id/textView4"
+                        android:id="@+id/package_sms_text_view"
                         android:textSize="20sp"
                         android:textColor="@color/virginRed"
                         android:textStyle="bold"
@@ -227,7 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1451 MB"
-                        android:id="@+id/textView6"
+                        android:id="@+id/package_data_text_view"
                         android:textSize="20sp"
                         android:textColor="@color/virginRed"
                         android:textStyle="bold"
@@ -250,7 +253,7 @@
             android:textColor="@color/subtext"
             android:gravity="center_horizontal"
             android:fontFamily="sans-serif-condensed"
-            android:id="@+id/textView7"/>
+            android:id="@+id/complex_bundle_validity_text_view"/>
     </LinearLayout>
 
 </LinearLayout>

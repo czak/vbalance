@@ -25,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         final PropertyManager props = new PropertyManager(this);
 
-        new AsyncTask<Void, Void, AccountDetails>() {
+        new AsyncTask<Void, Void, Account>() {
             @Override
-            protected AccountDetails doInBackground(Void... params) {
+            protected Account doInBackground(Void... params) {
                 try {
                     VirginApiClient client = new VirginApiClient();
                     if (client.login(props.getUsername(), props.getPassword())) {
                         JSONObject json = client.fetchAccountDetails(props.getMsisdn());
                         client.logout();
-                        return new AccountDetails(json);
+                        return new Account(json);
                     } else {
                         // TODO: Notify user of failed login
                     }
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onPostExecute(AccountDetails details) {
+            protected void onPostExecute(Account details) {
                 if (details == null) return;
 
                 // TODO: Move to a presenter or some such

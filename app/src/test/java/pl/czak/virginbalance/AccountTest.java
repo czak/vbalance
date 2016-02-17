@@ -10,13 +10,13 @@ import org.mockito.runners.MockitoJUnitRunner;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(MockitoJUnitRunner.class)
-public class AccountDetailsTest {
+public class AccountTest {
     @Mock
     private JSONObject json;
 
     @Test
     public void testConstructorWithValidJson() throws JSONException {
-        AccountDetails details = new AccountDetails(json);
+        Account details = new Account(json);
 
         assertNotNull(details.getGeneralBalance());
         assertNotNull(details.getVoiceBalance());

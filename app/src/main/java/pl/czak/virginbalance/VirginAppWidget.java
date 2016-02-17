@@ -16,12 +16,32 @@ public class VirginAppWidget extends AppWidgetProvider {
                                 final int appWidgetId) {
         Log.d(TAG, "updateAppWidget() called with: " + "context = [" + context + "], appWidgetManager = [" + appWidgetManager + "], appWidgetId = [" + appWidgetId + "]");
 
+        // TODO: Fetch account for the current widget
+        Account account = new Account();
+        AccountPresenter presenter = new AccountPresenter(account, context);
+
         // Construct the RemoteViews object
-        final RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_nobundle);
-        views.setTextViewText(R.id.balance_amount_text_view, "12,30 zł");
-//        views.setTextViewText(R.id.package_minutes_text_view, "123");
-//        views.setTextViewText(R.id.package_sms_text_view, "Bez limitu");
-//        views.setTextViewText(R.id.package_data_text_view, "1500 MB");
+        RemoteViews views = new RemoteViews(context.getPackageName(), presenter.getLayoutId());
+
+        // Basic data & general balance
+        views.setTextViewText(R.id.balance_amount_text_view, presenter.getBalanceAmount());
+        views.setTextViewText(R.id.account_tariff_text_view, presenter.getAccountTariff());
+        views.setTextViewText(R.id.account_validity_text_view, presenter.getAccountValidity());
+
+        // Complex bundle
+        views.setTextViewText(R.id.package_name_text_view, presenter.getPackageName());
+        views.setTextViewText(R.id.package_minutes_text_view, presenter.getPackageMinutes());
+        views.setTextViewText(R.id.package_sms_text_view, presenter.getPackageSms());
+        views.setTextViewText(R.id.package_data_text_view, presenter.getPackageData());
+        views.setTextViewText(R.id.complex_bundle_validity_text_view, presenter.getComplexBundleValidity());
+
+        // Minutes package
+        views.setTextViewText(R.id.package_minutes_text_view, presenter.getPackageMinutes());
+        views.setTextViewText(R.id.package_minutes_validity_text_view, presenter.getPackageMinutesValidity());
+
+        // Data package
+        views.setTextViewText(R.id.package_data_text_view, presenter.getPackageSms());
+        views.setTextViewText(R.id.package_data_validity_text_view, presenter.getPackageSmsValidity());
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);

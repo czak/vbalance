@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".VirginAppWidgetConfigure">
+        <activity android:name=".ConfigureActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
