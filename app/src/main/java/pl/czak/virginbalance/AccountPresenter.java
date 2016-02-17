@@ -22,8 +22,7 @@ public class AccountPresenter {
     }
 
     public String getBalanceAmount() {
-        // TODO: Get the value from account
-        double balance = 12.34;
+        double balance = account.getGeneralBalance().getQuantity();
         return String.format("%.02f zł", balance);
     }
 
