@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             protected Account doInBackground(Void... params) {
                 try {
                     VirginApiClient client = new VirginApiClient();
-                    if (client.login(props.getUsername(), props.getPassword())) {
+                    if (client.login(props.getUsername(), props.getPassword()) != null) {
                         JSONObject json = client.fetchAccountDetails(props.getMsisdn());
                         client.logout();
                         return new Account(json);

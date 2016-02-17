@@ -3,8 +3,8 @@ package pl.czak.virginbalance;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 import org.json.JSONObject;
@@ -18,15 +18,20 @@ public class VirginAppWidget extends AppWidgetProvider {
     static void updateAppWidget(final Context context, final AppWidgetManager appWidgetManager,
                                 final int appWidgetId) {
 
-        final PropertyManager props = new PropertyManager(context);
+        final SharedPreferences prefs =
+                context.getSharedPreferences("widget" + appWidgetId, Context.MODE_PRIVATE);
 
         new AsyncTask<Void, Void, Account>() {
             @Override
             protected Account doInBackground(Void... params) {
+                String username = prefs.getString("username", null);
+                String password = prefs.getString("password", null);
+                String msisdn = prefs.getString("msisdn", null);
+
                 try {
                     VirginApiClient client = new VirginApiClient();
-                    if (client.login(props.getUsername(), props.getPassword())) {
-                        JSONObject json = client.fetchAccountDetails(props.getMsisdn());
+                    if (client.login(username, password) != null) {
+                        JSONObject json = client.fetchAccountDetails(msisdn);
                         client.logout();
                         return new Account(json);
                     } else {

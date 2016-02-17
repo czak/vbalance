@@ -26,7 +26,7 @@ public class VirginApiClient {
     private static final String URL_USER           = URL_BASE + "/user";
     private static final String URL_MSISDN_DETAILS = URL_BASE + "/selfCare/msisdnDetails";
 
-    public boolean login(String username, String password) throws IOException {
+    public UserData login(String username, String password) throws IOException, JSONException {
         HttpURLConnection conn =
                 (HttpURLConnection) new URL(URL_LOGIN).openConnection();
         conn.setRequestMethod("POST");
@@ -44,7 +44,12 @@ public class VirginApiClient {
 
         logResponse("Login", conn);
 
-        return conn.getResponseCode() == HttpURLConnection.HTTP_OK;
+        if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+            JSONObject json = new JSONObject(conn.getHeaderField("UserData"));
+            return new UserData(json);
+        } else {
+            return null;
+        }
     }
 
     public void logout() throws IOException {
