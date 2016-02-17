@@ -5,6 +5,6 @@
     <string name="package_name">Pakiet %s</string>
     <string name="unlimited">Bez limitu</string>
     <string name="package_validity">Ważny do %tF</string>
-    <string name="invalid">Nieważny</string>
+    <string name="invalid">Ważny do: -</string>
     <string name="login_failed">Logowanie nie powiodło się</string>
 </resources>

@@ -3,6 +3,7 @@ package pl.czak.virginbalance;
 import android.content.Context;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
@@ -18,7 +19,9 @@ public class AccountPresenter {
     }
 
     public int getLayoutId() {
-        return R.layout.widget_bundle;
+        boolean hasComplexBundle =
+                account.getComplexBundleState().equals("ACTIVATED");
+        return hasComplexBundle ? R.layout.widget_bundle : R.layout.widget_nobundle;
     }
 
     public String getBalanceAmount() {
@@ -27,72 +30,73 @@ public class AccountPresenter {
     }
 
     public String getAccountTariff() {
-        // TODO: Get tariff name from account
-        String tariffName = "#MojaTaryfa";
-        return context.getString(R.string.account_tariff, tariffName);
+        return context.getString(R.string.account_tariff, account.getTariffName());
     }
 
     public String getAccountValidity() {
-        // TODO: Get date from account
-        Calendar date = new GregorianCalendar(2017, 0, 22);
-        // TODO: SimpleDateFormat preferred to "%tF" format
+        Date date = account.getAccountValidDate();
         return context.getString(R.string.account_validity, date);
     }
 
     public String getPackageName() {
-        String packageName = "#megapakiet";
+        String packageName = account.getComplexBundleName();
         return context.getString(R.string.package_name, packageName);
     }
 
     public String getPackageMinutes() {
-        // TODO: Get seconds quantity and unlimited from account
-        int quantity = 0; // NOTE: Seconds
-        boolean unlimited = false;
-        return unlimited ?
+        Balance voiceBalance = account.getComplexBundleVoiceBalance();
+        if (voiceBalance == null) voiceBalance = account.getVoiceBalance();
+        if (voiceBalance == null) return "0";
+        return voiceBalance.isUnlimited() ?
                 context.getString(R.string.unlimited) :
-                Integer.toString(quantity / 60);
+                Integer.toString((int) voiceBalance.getQuantity() / 60);
     }
 
     public String getPackageMinutesValidity() {
-        // TODO: Get date & active from account
-        Calendar date = null;
-        boolean active = false;
-        return active ?
+        Balance voiceBalance = account.getComplexBundleVoiceBalance();
+        if (voiceBalance == null) voiceBalance = account.getVoiceBalance();
+        if (voiceBalance == null) return context.getString(R.string.invalid);
+        Date date = voiceBalance.getValidDate();
+        return date != null ?
                 context.getString(R.string.package_validity, date) :
                 context.getString(R.string.invalid);
+    }
+
+    public boolean isPackageMinutesActive() {
+        Balance voiceBalance = account.getComplexBundleVoiceBalance();
+        if (voiceBalance == null) voiceBalance = account.getVoiceBalance();
+        return voiceBalance != null && voiceBalance.getValidDate() != null;
     }
 
     public String getPackageSms() {
-        // TODO: Get sms quantity and unlimited from account
-        int quantity = 49992;
-        boolean unlimited = true;
-        return unlimited ?
+        Balance smsBalance = account.getSmsBalance();
+        return smsBalance.isUnlimited() ?
                 context.getString(R.string.unlimited) :
-                Integer.toString(quantity);
+                String.format("%.0f", smsBalance.getQuantity());
     }
 
-    public String getPackageSmsValidity() {
-        // TODO: Get date & active from account
-        Calendar date = new GregorianCalendar(2016, 1, 14);
-        boolean active = true;
-        return active ?
+    public String getPackageData() {
+        Balance dataBalance = account.getDataBalance();
+        return dataBalance.isUnlimited() ?
+                context.getString(R.string.unlimited) :
+                String.format("%.0f MB", dataBalance.getQuantity() / 1000);
+    }
+
+    public String getPackageDataValidity() {
+        Balance dataBalance = account.getDataBalance();
+        Date date = dataBalance.getValidDate();
+        return date != null ?
                 context.getString(R.string.package_validity, date) :
                 context.getString(R.string.invalid);
     }
 
-    public String getPackageData() {
-        // TODO: Get KB quantity & unlimited from account
-        int quantity = 1491000; // NOTE: KB
-        boolean unlimited = false;
-        return unlimited ?
-                context.getString(R.string.unlimited) :
-                String.format("%d MB", quantity / 1000);
+    public boolean isPackageDataActive() {
+        Balance dataBalance = account.getDataBalance();
+        return dataBalance != null && dataBalance.getValidDate() != null;
     }
 
     public String getComplexBundleValidity() {
-        // TODO: Get date from account
-        Calendar date = new GregorianCalendar(2016, 2, 12);
-        // TODO: SimpleDateFormat preferred to "%tF" format
+        Date date = account.getComplexBundleValidDate();
         return context.getString(R.string.package_validity, date);
     }
 }

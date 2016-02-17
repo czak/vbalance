@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
@@ -40,20 +41,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7,80 zł"
                 android:textColor="@color/virginRed"
                 android:textSize="20sp"
                 android:layout_below="@+id/piggy_image"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif-condensed"
                 android:textStyle="bold"
-                android:id="@+id/balance_amount_text_view"/>
+                android:id="@+id/balance_amount_text_view"
+                tools:text="123,45 zł"/>
         </RelativeLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Taryfa #ChcęWszystko"
+            tools:text="Taryfa #ChcęWszystko"
             android:textSize="12sp"
             android:textColor="@color/subtext"
             android:gravity="center_horizontal"
@@ -63,7 +64,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ważne do 2017-01-30"
+            tools:text="Ważne do 2017-01-30"
             android:textColor="@color/subtext"
             android:textSize="12sp"
             android:gravity="center_horizontal"
@@ -83,7 +84,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pakiet #pełenluz"
+            android:text="Pakiet"
+            tools:text="Pakiet #pełenluz"
             android:textSize="12sp"
             android:fontFamily="sans-serif-condensed"
             android:textColor="@android:color/black"
@@ -134,7 +136,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="99"
+                        tools:text="99"
                         android:id="@+id/package_minutes_text_view"
                         android:layout_below="@+id/textView"
                         android:layout_toRightOf="@+id/imageView"
@@ -182,7 +184,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bez limitu"
+                        tools:text="Bez limitu"
                         android:id="@+id/package_sms_text_view"
                         android:textSize="20sp"
                         android:textColor="@color/virginRed"
@@ -229,7 +231,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1451 MB"
+                        tools:text="1451 MB"
                         android:id="@+id/package_data_text_view"
                         android:textSize="20sp"
                         android:textColor="@color/virginRed"
@@ -248,7 +250,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ważny do 2016-03-01"
+            tools:text="Ważny do 2016-03-01"
             android:textSize="12sp"
             android:textColor="@color/subtext"
             android:gravity="center_horizontal"

@@ -4,6 +4,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.widget.RemoteViews;
 
@@ -66,10 +67,24 @@ public class VirginAppWidget extends AppWidgetProvider {
                 // Minutes package
                 views.setTextViewText(R.id.package_minutes_text_view, presenter.getPackageMinutes());
                 views.setTextViewText(R.id.package_minutes_validity_text_view, presenter.getPackageMinutesValidity());
+                if (presenter.isPackageMinutesActive()) {
+                    views.setTextColor(R.id.package_minutes_text_view, context.getResources().getColor(R.color.virginRed));
+                    views.setTextColor(R.id.package_minutes_validity_text_view, Color.BLACK);
+                } else {
+                    views.setTextColor(R.id.package_minutes_text_view, Color.GRAY);
+                    views.setTextColor(R.id.package_minutes_validity_text_view, Color.GRAY);
+                }
 
                 // Data package
-                views.setTextViewText(R.id.package_data_text_view, presenter.getPackageSms());
-                views.setTextViewText(R.id.package_data_validity_text_view, presenter.getPackageSmsValidity());
+                views.setTextViewText(R.id.package_data_text_view, presenter.getPackageData());
+                views.setTextViewText(R.id.package_data_validity_text_view, presenter.getPackageDataValidity());
+                if (presenter.isPackageDataActive()) {
+                    views.setTextColor(R.id.package_data_text_view, context.getResources().getColor(R.color.virginRed));
+                    views.setTextColor(R.id.package_data_validity_text_view, Color.BLACK);
+                } else {
+                    views.setTextColor(R.id.package_data_text_view, Color.GRAY);
+                    views.setTextColor(R.id.package_data_validity_text_view, Color.GRAY);
+                }
 
                 // Instruct the widget manager to update the widget
                 appWidgetManager.updateAppWidget(appWidgetId, views);
