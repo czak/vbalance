@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal"
+        android:id="@+id/package_name_text_view"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Pakiet"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        tools:text="Pakiet #pełenluz"/>
+
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/minutes"/>
+
+                <TextView
+                    android:fontFamily="sans-serif-condensed"
+                    android:id="@+id/textView"
+                    android:includeFontPadding="false"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-2dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_toRightOf="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingMultiplier="0.75"
+                    android:text="Minuty do wszystkich"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:fontFamily="sans-serif-condensed"
+                    android:id="@+id/package_minutes_text_view"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/textView"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_toRightOf="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingMultiplier="0.75"
+                    android:textColor="@color/virginRed"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="99"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/sms"/>
+
+                <TextView
+                    android:fontFamily="sans-serif-condensed"
+                    android:id="@+id/textView3"
+                    android:includeFontPadding="false"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-2dp"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:layout_toRightOf="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingMultiplier="0.75"
+                    android:text="SMS"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:fontFamily="sans-serif-condensed"
+                    android:id="@+id/package_sms_text_view"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/textView3"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:layout_toRightOf="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingMultiplier="0.75"
+                    android:textColor="@color/virginRed"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Bez limitu"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/data"/>
+
+                <TextView
+                    android:fontFamily="sans-serif-condensed"
+                    android:id="@+id/textView5"
+                    android:includeFontPadding="false"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-2dp"
+                    android:layout_toEndOf="@+id/imageView4"
+                    android:layout_toRightOf="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingMultiplier="0.75"
+                    android:text="Data"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:fontFamily="sans-serif-condensed"
+                    android:id="@+id/package_data_text_view"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/textView5"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:layout_toEndOf="@+id/imageView4"
+                    android:layout_toRightOf="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingMultiplier="0.75"
+                    android:textColor="@color/virginRed"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="1451 MB"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal"
+        android:id="@+id/complex_bundle_validity_text_view"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/subtext"
+        android:textSize="12sp"
+        tools:text="Ważny do 2016-03-01"/>
+</LinearLayout>

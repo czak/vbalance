@@ -2,9 +2,7 @@ package pl.czak.virginbalance;
 
 import android.content.Context;
 
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 /**
  * Created by czak on 17/02/16.
@@ -18,10 +16,10 @@ public class AccountPresenter {
         this.context = context;
     }
 
-    public int getLayoutId() {
+    public int getPaneLayoutId() {
         boolean hasComplexBundle =
                 account.getComplexBundleState().equals("ACTIVATED");
-        return hasComplexBundle ? R.layout.widget_bundle : R.layout.widget_nobundle;
+        return hasComplexBundle ? R.layout.widget_pane_bundle : R.layout.widget_pane_nobundle;
     }
 
     public String getBalanceAmount() {
