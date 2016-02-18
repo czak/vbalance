@@ -48,4 +48,14 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:visibility="invisible"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/error_image_view"
+        android:src="@android:drawable/stat_notify_error"
+        android:tint="@color/virginRed"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"/>
 </RelativeLayout>

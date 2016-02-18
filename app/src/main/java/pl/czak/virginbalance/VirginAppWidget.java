@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -27,7 +28,18 @@ public class VirginAppWidget extends AppWidgetProvider {
                 context.getSharedPreferences("widget" + appWidgetId, Context.MODE_PRIVATE);
 
         final RemoteViews baseViews = new RemoteViews(context.getPackageName(), R.layout.widget_frame);
+
+        // Handle clicking on the frame
+        Intent intent = new Intent(context, VirginAppWidget.class);
+        intent.setAction(ACTION_FORCE_UPDATE);
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, appWidgetId, intent, 0);
+        baseViews.setOnClickPendingIntent(R.id.widget_frame, pendingIntent);
+
+        // Turn on the spinner and hide the error symbol
         baseViews.setViewVisibility(R.id.progress_bar, View.VISIBLE);
+        baseViews.setViewVisibility(R.id.error_image_view, View.INVISIBLE);
+
         appWidgetManager.updateAppWidget(appWidgetId, baseViews);
 
         new AsyncTask<Void, Void, Account>() {
@@ -55,7 +67,14 @@ public class VirginAppWidget extends AppWidgetProvider {
 
             @Override
             protected void onPostExecute(Account account) {
-                if (account == null) return;
+                // Hide the spinner first
+                baseViews.setViewVisibility(R.id.progress_bar, View.INVISIBLE);
+
+                if (account == null) {
+                    baseViews.setViewVisibility(R.id.error_image_view, View.VISIBLE);
+                    appWidgetManager.updateAppWidget(appWidgetId, baseViews);
+                    return;
+                }
 
                 AccountPresenter presenter = new AccountPresenter(account, context);
 
@@ -63,13 +82,6 @@ public class VirginAppWidget extends AppWidgetProvider {
                 baseViews.setTextViewText(R.id.balance_amount_text_view, presenter.getBalanceAmount());
                 baseViews.setTextViewText(R.id.account_tariff_text_view, presenter.getAccountTariff());
                 baseViews.setTextViewText(R.id.account_validity_text_view, presenter.getAccountValidity());
-
-                // Handle clicking on the frame
-                Intent intent = new Intent(context, VirginAppWidget.class);
-                intent.setAction(ACTION_FORCE_UPDATE);
-                intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(context, appWidgetId, intent, 0);
-                baseViews.setOnClickPendingIntent(R.id.widget_frame, pendingIntent);
 
                 // Views for the right pane
                 RemoteViews paneViews = new RemoteViews(context.getPackageName(), presenter.getPaneLayoutId());
@@ -104,9 +116,6 @@ public class VirginAppWidget extends AppWidgetProvider {
                     paneViews.setTextColor(R.id.package_data_text_view, Color.GRAY);
                     paneViews.setTextColor(R.id.package_data_validity_text_view, Color.GRAY);
                 }
-
-                // Hide the spinner
-                baseViews.setViewVisibility(R.id.progress_bar, View.INVISIBLE);
 
                 // Instruct the widget manager to update the widget
                 appWidgetManager.updateAppWidget(appWidgetId, baseViews);
