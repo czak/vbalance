@@ -17,4 +17,8 @@
     <string name="package_sms">SMS</string>
     <string name="package_data">Data</string>
     <string name="packages">Pakiety dodatkowe</string>
+    <string name="email_address">Adres e-mail</string>
+    <string name="password">Hasło</string>
+    <string name="sign_in">Zaloguj</string>
+    <string name="phone_numbers">Numery telefonów</string>
 </resources>

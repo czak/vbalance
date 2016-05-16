@@ -11,9 +11,13 @@
     <string name="balance_amount_placeholder">- zł</string>
     <string name="account_tariff_placeholder">Tariff -</string>
     <string name="account_validity_placeholder">Valid until -</string>
-    <string name="package_placeholder">Pakiet</string>
-    <string name="package_minutes">Minuty do wszystkich</string>
+    <string name="package_placeholder">Package</string>
+    <string name="package_minutes">Minutes</string>
     <string name="package_sms">SMS</string>
     <string name="package_data">Data</string>
-    <string name="packages">Pakiety dodatkowe</string>
+    <string name="packages">Packages</string>
+    <string name="email_address">E-mail</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="phone_numbers">Phone numbers</string>
 </resources>
