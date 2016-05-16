@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_horizontal"
-        android:text="Pakiety dodatkowe"
+        android:text="@string/packages"
         android:textColor="@android:color/black"
         android:textSize="12sp"/>
 
@@ -57,7 +57,7 @@
                 android:fontFamily="sans-serif-condensed"
                 android:includeFontPadding="false"
                 android:lineSpacingMultiplier="0.75"
-                android:text="Minuty do wszystkich"
+                android:text="@string/package_minutes"
                 android:textColor="@android:color/black"
                 android:textSize="10sp"/>
 
@@ -122,7 +122,7 @@
                 android:fontFamily="sans-serif-condensed"
                 android:includeFontPadding="false"
                 android:lineSpacingMultiplier="0.75"
-                android:text="Data"
+                android:text="@string/package_data"
                 android:textColor="@android:color/black"
                 android:textSize="10sp"/>
 

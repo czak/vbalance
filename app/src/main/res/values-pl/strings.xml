@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Virgin Balance</string>
+    <string name="package_name">Pakiet %s</string>
+    <string name="account_tariff">Taryfa %s</string>
+    <string name="account_validity">Ważne do %tF</string>
+    <string name="invalid">Ważny do: -</string>
+    <string name="login_failed">Logowanie nie powiodło się</string>
+    <string name="package_validity">Ważny do %tF</string>
+    <string name="unlimited">Bez limitu</string>
+    <string name="account_balance">Środki na koncie</string>
+    <string name="balance_amount_placeholder">- zł</string>
+    <string name="account_tariff_placeholder">Taryfa -</string>
+    <string name="account_validity_placeholder">Ważne do -</string>
+    <string name="package_placeholder">Pakiet</string>
+    <string name="package_minutes">Minuty do wszystkich</string>
+    <string name="package_sms">SMS</string>
+    <string name="package_data">Data</string>
+    <string name="packages">Pakiety dodatkowe</string>
+</resources>

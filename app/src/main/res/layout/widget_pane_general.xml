@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_horizontal"
-        android:text="Środki na koncie"
+        android:text="@string/account_balance"
         android:textColor="@android:color/black"
         android:textSize="12sp"/>
 
@@ -36,7 +36,7 @@
             android:layout_below="@+id/piggy_image"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-condensed"
-            android:text="- zł"
+            android:text="@string/balance_amount_placeholder"
             android:textColor="@color/virginRed"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -51,7 +51,7 @@
         android:gravity="center_horizontal"
         android:textColor="@color/subtext"
         android:textSize="12sp"
-        android:text="Taryfa -"
+        android:text="@string/account_tariff_placeholder"
         tools:text="Taryfa #ChcęWszystko"/>
 
     <TextView
@@ -62,6 +62,6 @@
         android:gravity="center_horizontal"
         android:textColor="@color/subtext"
         android:textSize="12sp"
-        android:text="Ważne do -"
+        android:text="@string/account_validity_placeholder"
         tools:text="Ważne do 2017-01-30"/>
 </LinearLayout>

@@ -13,7 +13,7 @@
         android:id="@+id/package_name_text_view"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Pakiet"
+        android:text="@string/package_placeholder"
         android:textColor="@android:color/black"
         android:textSize="12sp"
         tools:text="Pakiet #pełenluz"/>
@@ -55,7 +55,7 @@
                     android:layout_toRightOf="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:lineSpacingMultiplier="0.75"
-                    android:text="Minuty do wszystkich"
+                    android:text="@string/package_minutes"
                     android:textColor="@android:color/black"
                     android:textSize="10sp"/>
 
@@ -103,7 +103,7 @@
                     android:layout_toRightOf="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:lineSpacingMultiplier="0.75"
-                    android:text="SMS"
+                    android:text="@string/package_sms"
                     android:textColor="@android:color/black"
                     android:textSize="10sp"/>
 
@@ -150,7 +150,7 @@
                     android:layout_toRightOf="@+id/imageView4"
                     android:layout_width="wrap_content"
                     android:lineSpacingMultiplier="0.75"
-                    android:text="Data"
+                    android:text="@string/package_data"
                     android:textColor="@android:color/black"
                     android:textSize="10sp"/>
 
