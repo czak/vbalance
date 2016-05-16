@@ -1,4 +1,4 @@
-package pl.czak.virginbalance;
+package pl.czak.vbalance;
 
 import org.json.JSONObject;
 import org.junit.Test;

@@ -1,8 +1,7 @@
-package pl.czak.virginbalance;
+package pl.czak.vbalance;
 
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.Date;
 
 /**

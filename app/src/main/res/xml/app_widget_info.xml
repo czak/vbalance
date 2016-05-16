@@ -8,5 +8,5 @@
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="3600000"
     android:widgetCategory="home_screen"
-    android:configure="pl.czak.virginbalance.ConfigureActivity">
+    android:configure="pl.czak.vbalance.ConfigureActivity">
 </appwidget-provider>

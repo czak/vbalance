@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Virgin Balance</string>
     <string name="package_name">Pakiet %s</string>
     <string name="account_tariff">Taryfa %s</string>
     <string name="account_validity">Ważne do %tF</string>

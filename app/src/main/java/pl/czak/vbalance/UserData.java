@@ -1,10 +1,8 @@
-package pl.czak.virginbalance;
+package pl.czak.vbalance;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 /**
  * Created by czak on 17/02/16.

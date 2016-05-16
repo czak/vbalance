@@ -1,4 +1,4 @@
-package pl.czak.virginbalance;
+package pl.czak.vbalance;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,9 +15,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -71,7 +68,7 @@ public class ConfigureActivity extends AppCompatActivity {
 
                 AppWidgetManager appWidgetManager =
                         AppWidgetManager.getInstance(ConfigureActivity.this);
-                VirginAppWidget.updateAppWidget(ConfigureActivity.this, appWidgetManager, appWidgetId);
+                AppWidget.updateAppWidget(ConfigureActivity.this, appWidgetManager, appWidgetId);
 
                 Intent resultValue = new Intent();
                 resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
@@ -90,7 +87,7 @@ public class ConfigureActivity extends AppCompatActivity {
                     @Override
                     protected UserData doInBackground(Void... params) {
                         try {
-                            VirginApiClient client = new VirginApiClient();
+                            ApiClient client = new ApiClient();
                             return client.login(email, password);
                         } catch (IOException | JSONException e) {
                             e.printStackTrace();

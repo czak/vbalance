@@ -1,15 +1,9 @@
-package pl.czak.virginbalance;
-
-import android.support.annotation.Nullable;
+package pl.czak.vbalance;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 /**
  * Created by czak on 08/02/16.

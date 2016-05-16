@@ -1,4 +1,4 @@
-package pl.czak.virginbalance;
+package pl.czak.vbalance;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -17,9 +16,8 @@ import org.json.JSONObject;
 /**
  * Implementation of App Widget functionality.
  */
-public class VirginAppWidget extends AppWidgetProvider {
-    private static final String TAG = "VirginAppWidget";
-    private static final String ACTION_FORCE_UPDATE = "pl.czak.virginbalance.FORCE_UPDATE";
+public class AppWidget extends AppWidgetProvider {
+    private static final String ACTION_FORCE_UPDATE = "pl.czak.vbalance.FORCE_UPDATE";
 
     static void updateAppWidget(final Context context, final AppWidgetManager appWidgetManager,
                                 final int appWidgetId) {
@@ -30,7 +28,7 @@ public class VirginAppWidget extends AppWidgetProvider {
         final RemoteViews baseViews = new RemoteViews(context.getPackageName(), R.layout.widget_frame);
 
         // Handle clicking on the frame
-        Intent intent = new Intent(context, VirginAppWidget.class);
+        Intent intent = new Intent(context, AppWidget.class);
         intent.setAction(ACTION_FORCE_UPDATE);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, appWidgetId, intent, 0);
@@ -50,7 +48,7 @@ public class VirginAppWidget extends AppWidgetProvider {
                 String msisdn = prefs.getString("msisdn", null);
 
                 try {
-                    VirginApiClient client = new VirginApiClient();
+                    ApiClient client = new ApiClient();
                     if (client.login(username, password) != null) {
                         JSONObject json = client.fetchAccountDetails(msisdn);
                         client.logout();

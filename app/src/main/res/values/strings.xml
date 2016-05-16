@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Virgin Balance</string>
+    <string name="app_name" translatable="false">VBalance</string>
     <string name="account_tariff">Tariff %s</string>
     <string name="account_validity">Valid until %tF</string>
     <string name="package_name">Package %s</string>

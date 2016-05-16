@@ -1,4 +1,4 @@
-package pl.czak.virginbalance;
+package pl.czak.vbalance;
 
 import android.util.Log;
 
@@ -16,8 +16,8 @@ import java.net.URLEncoder;
 /**
  * Created by czak on 09/02/16.
  */
-public class VirginApiClient {
-    private static final String TAG = "VirginApiClient";
+public class ApiClient {
+    private static final String TAG = "ApiClient";
 
     private static final String URL_BASE = "https://virginmobile.pl/spitfire-web-api/api/v1";
 
